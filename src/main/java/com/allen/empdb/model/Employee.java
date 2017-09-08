@@ -10,16 +10,16 @@ public class Employee {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private
-    Long id;
-    private String firstName;
-    private String lastName;
-    private int dateHired;
+    private Long id;
+    String firstName;
+    String lastName;
+    int dateHired;
 
     public Employee() {
     }
 
-    public Employee(String firstName, String lastName, int dateHired) {
+    public Employee(Long id, String firstName, String lastName, int dateHired) {
+        this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
         this.dateHired = dateHired;

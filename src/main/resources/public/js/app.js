@@ -25,7 +25,7 @@
 	}
 
 	app.config(function($stateProvider, $urlRouterProvider, $controllerProvider){
-		var origController = app.controller
+		var origController = app.controller;
 		app.controller = function (name, constructor){
 			$controllerProvider.register(name, constructor);
 			return origController.apply(this, arguments);
@@ -34,7 +34,7 @@
 		var viewsPrefix = 'views/';
 
 		// For any unmatched url, send to /
-		$urlRouterProvider.otherwise("/home.html")
+		$urlRouterProvider.otherwise("/")
 
 		$stateProvider
 			// you can set this to no template if you just want to use the html in the page
@@ -48,7 +48,7 @@
 			.state('employees',{
 	        url:'/employees',
 	        templateUrl: viewsPrefix + 'employees.html',
-	        controller:'EmployeeController'
+	        controller:'EmployeeListController'
 	    }).state('viewEmployee',{
 	       url:'/employees/:id/view',
 	       templateUrl: viewsPrefix + 'employee-view.html',
