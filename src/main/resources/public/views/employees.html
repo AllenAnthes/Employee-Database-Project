@@ -1,0 +1,18 @@
+<div class="container pad-top">
+  <a ui-sref="newEmployee" class="btn-primary btn-lg nodecoration">Add New Employee</a>
+  <table class="table employeetable">
+      <tr>
+          <td><h3>All Employees</h3></td>
+          <td></td>
+      </tr>
+      <tr ng-repeat="employee in employees">
+          <td>{{employee.firstName}}</td>
+          <td>{{employee.lastName}}</td>
+          <td>{{employee.dateHired}}</td>
+          <td>
+              <a class="btn btn-primary" ui-sref="viewEmployee({id:employee.id})">View</a>
+              <a class="btn btn-danger"  ng-click="deleteEmployee(employee)">Delete</a>
+          </td>
+      </tr>
+  </table>
+</div>
