@@ -17,8 +17,12 @@ import static org.springframework.web.bind.annotation.RequestMethod.DELETE;
 @RequestMapping("api/v1/")
 public class EmployeeController {
 
+    private final EmployeeRepository employeeRepository;
+
     @Autowired
-    private EmployeeRepository employeeRepository;
+    public EmployeeController(EmployeeRepository employeeRepository) {
+        this.employeeRepository = employeeRepository;
+    }
 
     @RequestMapping(value = "employees", method = RequestMethod.GET)
     public List<Employee> list() {
@@ -48,5 +52,4 @@ public class EmployeeController {
         employeeRepository.delete(existingEmployee);
         return existingEmployee;
     }
-
 }
