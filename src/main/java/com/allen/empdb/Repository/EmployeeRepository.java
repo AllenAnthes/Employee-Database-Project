@@ -8,8 +8,10 @@ import java.util.List;
 
 public interface EmployeeRepository extends JpaRepository<Employee, Long> {
 
-    List<Employee> findByFirstNameIgnoreCaseAndLastNameIgnoreCaseOrderByLastNameAsc(String firstName, String lastName);
+    List<Employee> findByFirstNameContainsIgnoreCaseOrLastNameContainsIgnoreCaseOrderByLastNameAsc(
+            @Param("firstName") String firstName,@Param("lastName") String lastName);
     List<Employee> findByFirstNameIgnoreCaseOrderByLastNameAsc(String firstName);
     List<Employee> findByLastNameContainsIgnoreCaseOrderByLastNameAsc(@Param("lastName") String lastName);
     List<Employee> findByTrade(@Param("trade") String trade);
+
 }
