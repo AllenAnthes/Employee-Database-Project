@@ -12,7 +12,5 @@ public interface EmployeeDetailView {
 
     String getFirstName();
     String getLastName();
-    Integer getDateHired();
-
-
+    Integer getPhoneNumber();
 }

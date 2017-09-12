@@ -1,30 +1,31 @@
 package com.allen.empdb.model;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 
 @Entity
 public class Employee {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     @NotNull
     private String firstName;
     private String lastName;
-    private int dateHired;
+    private String email;
+    private String phoneNumber;
+    private String trade;
+
 
     public Employee() {
     }
 
-    public Employee(Long id, String firstName, String lastName, int dateHired) {
+    public Employee(Long id, String firstName, String lastName, String email, String phoneNumber, String trade) {
         this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
-        this.dateHired = dateHired;
+        this.email = email;
+        this.phoneNumber = phoneNumber;
+        this.trade = trade;
     }
 
     public Long getId() {
@@ -33,6 +34,14 @@ public class Employee {
 
     public void setId(Long id) {
         this.id = id;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     public String getFirstName() {
@@ -51,11 +60,19 @@ public class Employee {
         this.lastName = lastName;
     }
 
-    public int getDateHired() {
-        return dateHired;
+    public String getPhoneNumber() {
+        return phoneNumber;
     }
 
-    public void setDateHired(int dateHired) {
-        this.dateHired = dateHired;
+    public void setPhoneNumber(String phoneNumber) {
+        this.phoneNumber = phoneNumber;
+    }
+
+    public String getTrade() {
+        return trade;
+    }
+
+    public void setTrade(String trade) {
+        this.trade = trade;
     }
 }

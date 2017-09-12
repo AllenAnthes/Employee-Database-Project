@@ -39,4 +39,9 @@ public class AppTests {
 
     }
 
+    @Test
+    public void testFindByName() {
+
+    }
+
 }
