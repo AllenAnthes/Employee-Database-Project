@@ -14,18 +14,21 @@ public class Employee {
     private String email;
     private String phoneNumber;
     private String trade;
+    private String resumeLink;
 
 
     public Employee() {
     }
 
-    public Employee(Long id, String firstName, String lastName, String email, String phoneNumber, String trade) {
+    public Employee(Long id, String firstName, String lastName,
+                    String email, String phoneNumber, String trade, String resumeLink) {
         this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
         this.phoneNumber = phoneNumber;
         this.trade = trade;
+        this.resumeLink = resumeLink;
     }
 
     public Long getId() {
@@ -74,5 +77,13 @@ public class Employee {
 
     public void setTrade(String trade) {
         this.trade = trade;
+    }
+
+    public String getResumeLink() {
+        return resumeLink;
+    }
+
+    public void setResumeLink(String resumeLink) {
+        this.resumeLink = resumeLink;
     }
 }

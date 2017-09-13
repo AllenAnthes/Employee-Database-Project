@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html xmlns:v-on="http://www.w3.org/1999/xhtml">
+<head>
+    <title>My first Vue app</title>
+</head>
+<body>
+
+<div id="root">
+
+    <h2>All Tasks</h2>
+
+    <ul>
+        <li v-for="task in tasks" v-text="task.description">
+            <
+        </li>
+
+    </ul>
+
+    <h2>Incomplete Tasks</h2>
+
+    <ul>
+        <li v-for="task in incompleteTasks" v-text="task.description"></li>
+    </ul>
+
+
+
+
+
+</div>
+
+</body>
+<script src="https://unpkg.com/vue"></script>
+
+
+
+<script>
+
+    var app  = new Vue({
+
+        el: '#root',
+
+        data: {
+
+            tasks: [
+                { description: 'Go to the store', completed: true},
+                { description: 'Finish Screencast', completed: false},
+                { description: 'Make donation', completed: false},
+                { description: 'Clear inbox', completed: false},
+                { description: 'Clean room', completed: false},
+                { description: 'Make Dinner', completed: true},
+            ]
+        },
+
+        computed: {
+            incompleteTasks() {
+
+                return this.tasks.filter(task => !task.completed)
+
+            }
+        }
+
+    })
+
+    Vue.component('list-component', {
+
+    })
+
+
+
+
+
+
+
+</script>
+</html>
