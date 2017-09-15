@@ -7,6 +7,7 @@ import javax.validation.constraints.NotNull;
 public class Employee {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     @NotNull
     private String firstName;
