@@ -22,6 +22,12 @@ public class EmployeeController {
         this.employeeRepository = employeeRepository;
     }
 
+    @RequestMapping(value = "login")
+    @ResponseBody
+    public String login() {
+        return "All good. You DO NOT need to be authenticated to call /login";
+    }
+
     @RequestMapping(value = "employees", method = RequestMethod.GET)
     public List<Employee> list() {
         return employeeRepository.findAll();
