@@ -3,12 +3,14 @@ package com.allen.empdb.config;
 import org.springframework.boot.context.embedded.FilterRegistrationBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.web.cors.CorsConfiguration;
 import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 import org.springframework.web.filter.CorsFilter;
 
 @Configuration
-public class MyConfiguration {
+@EnableWebSecurity
+public class CORSConfiguration {
 
     @Bean
     public FilterRegistrationBean corsFilter() {
